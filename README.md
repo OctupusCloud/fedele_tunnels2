@@ -1,8 +1,8 @@
-# Fedele Tunnels Plugin
-Este plugin es un fork de https://github.com/robertlynch3/netbox-tunnels2
+# Fedele Tunnels Extension
+Esta extension es un fork de https://github.com/robertlynch3/netbox-tunnels2
 
 ## Creación del Fork
-Para futuras actualizaciones del Plugin, si se desea realizar un nuevo fork, se debe realizar el siguiente procedimiento:
+Para futuras actualizaciones de la Extensión, si se desea realizar un nuevo fork, se debe realizar el siguiente procedimiento:
 
 1. Hacer el Fork
 2. Añadir remoto: 
