@@ -8,8 +8,8 @@
 		"docker-compose.override.yml"
 	],
 	"service": "netbox",
-	//"workspaceMount": "source=${localWorkspaceFolder},target=/opt/netbox/netbox/netbox-tunnels2,type=bind,consistency=cached",
-	"workspaceFolder": "/opt/netbox/netbox/netbox-tunnels2",
+	//"workspaceMount": "source=${localWorkspaceFolder},target=/opt/netbox/netbox/fedele-tunnels2,type=bind,consistency=cached",
+	"workspaceFolder": "/opt/netbox/netbox/fedele-tunnels2",
 
 	"overrideCommand":false,
 

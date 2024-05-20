@@ -15,7 +15,7 @@ RUN mkdir -p /opt/netbox \
     && pip install -r /opt/netbox/requirements.txt
 
 # Install Validity
-COPY . /plugin/netbox_tunnels2
-RUN pip install --editable /plugin/netbox_tunnels2[dev]
+COPY . /plugin/fedele_tunnels2
+RUN pip install --editable /plugin/fedele_tunnels2[dev]
 
 WORKDIR /opt/netbox/netbox/

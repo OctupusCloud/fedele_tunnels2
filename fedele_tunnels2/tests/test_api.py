@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
-"""Tests for `netbox_tunnels2` package."""
+"""Tests for `fedele_tunnels2` package."""
 from django.urls import reverse
-from netbox_tunnels2.tests.custom import APITestCase
+from fedele_tunnels2.tests.custom import APITestCase
 
 
 class AppTest(APITestCase):
@@ -11,7 +11,7 @@ class AppTest(APITestCase):
     """
 
     def test_root(self):
-        url = reverse("plugins-api:netbox_tunnels2-api:api-root")
+        url = reverse("plugins-api:fedele_tunnels2-api:api-root")
         response = self.client.get(f"{url}?format=api", **self.header)
 
         self.assertEqual(response.status_code, 200)

@@ -14,7 +14,7 @@ from utilities.api import get_serializer_for_model
 from drf_spectacular.utils import extend_schema_field
 
 class NestedTunnelSerializer(WritableNestedSerializer):
-    url = serializers.HyperlinkedIdentityField(view_name='plugins-api:netbox_tunnels2-api:tunnel-detail')
+    url = serializers.HyperlinkedIdentityField(view_name='plugins-api:fedele_tunnels2-api:tunnel-detail')
 
     class Meta:
         model = Tunnel
@@ -26,7 +26,7 @@ class NestedTunnelSerializer(WritableNestedSerializer):
             )
 
 class TunnelSerializer(NetBoxModelSerializer):
-    url = serializers.HyperlinkedIdentityField(view_name='plugins-api:netbox_tunnels2-api:tunnel-detail')
+    url = serializers.HyperlinkedIdentityField(view_name='plugins-api:fedele_tunnels2-api:tunnel-detail')
     side_a_assigned_object_type = ContentTypeField(
         queryset=ContentType.objects.filter(TUNNEL_INTERFACE_ASSIGNMENT_MODELS),
         allow_null=True
@@ -153,14 +153,14 @@ class TunnelSerializer(NetBoxModelSerializer):
 #
 
 class NestedTunnelTypeSerializer(WritableNestedSerializer):
-    url = serializers.HyperlinkedIdentityField(view_name='plugins:netbox_tunnels2:tunneltype')
+    url = serializers.HyperlinkedIdentityField(view_name='plugins:fedele_tunnels2:tunneltype')
 
     class Meta:
         model = TunnelType
         fields = ('id', 'url', 'display', 'name')
 
 class TunnelTypeSerializer(NetBoxModelSerializer):
-    url = serializers.HyperlinkedIdentityField(view_name='plugins:netbox_tunnels2:tunneltype')
+    url = serializers.HyperlinkedIdentityField(view_name='plugins:fedele_tunnels2:tunneltype')
 
     class Meta:
         model = TunnelType

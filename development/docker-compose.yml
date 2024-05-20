@@ -17,7 +17,7 @@ services:
     volumes:
       - custom_scripts:/opt/netbox/netbox/scripts
       - ./configuration.py:/opt/netbox/netbox/netbox/configuration.py
-      - ../netbox_tunnels2:/plugin/netbox_tunnels2/netbox_tunnels2
+      - ../fedele_tunnels2:/plugin/fedele_tunnels2/fedele_tunnels2
       - git_repos:/opt/git_repos/
     networks:
       - netboxnet

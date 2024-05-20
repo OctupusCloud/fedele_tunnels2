@@ -45,17 +45,17 @@ def get_min_version(rel_path):
 
 
 setup(
-    name="netbox-tunnels2",
-    version=get_min_version('netbox_tunnels2/version.py'),
-    description="A plugin for NetBox to support documentation of network tunneling protocols, ie IPsec, GRE, L2TP, etc.",
+    name="fedele-tunnels2",
+    version=get_min_version('fedele_tunnels2/version.py'),
+    description="A plugin for Fedele to support documentation of network tunneling protocols, ie IPsec, GRE, L2TP, etc.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/robertlynch3/netbox-tunnels2",
-    author="Robert Lynch",
+    url="https://github.com/OctupusCloud/fedele_tunnels2",
+    author="Octupus",
     license="Apache v2.0",
     package_data={"": ["LICENSE"],},
     install_requires=[],
-    min_version=get_min_version('netbox_tunnels2/version.py'),
+    min_version=get_min_version('fedele_tunnels2/version.py'),
     packages=find_packages(),
     include_package_data=True,
 )

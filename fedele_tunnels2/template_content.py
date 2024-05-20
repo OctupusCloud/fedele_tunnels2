@@ -16,7 +16,7 @@ class InterfaceTunnels(PluginTemplateExtension):
         )
         tunnel_table = RelatedTunnelTable(tunnel)
         return self.render(
-            'netbox_tunnels2/interface_extend.html',
+            'fedele_tunnels2/interface_extend.html',
             extra_context={
                 'related_tunnels': tunnel_table
             }
@@ -35,7 +35,7 @@ class VMInterfaceTunnels(PluginTemplateExtension):
         )
         tunnel_table = RelatedTunnelTable(tunnel)
         return self.render(
-            'netbox_tunnels2/interface_extend.html',
+            'fedele_tunnels2/interface_extend.html',
             extra_context={
                 'related_tunnels': tunnel_table
             }

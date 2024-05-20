@@ -55,7 +55,7 @@ class TunnelType(OrganizationalModel):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('plugins:netbox_tunnels2:tunneltype', args=[self.pk])
+        return reverse('plugins:fedele_tunnels2:tunneltype', args=[self.pk])
 
 
 class Tunnel(NetBoxModel):
@@ -133,7 +133,7 @@ class Tunnel(NetBoxModel):
         """Class to define what identifies the Tunnel object. Will be using name for this."""
         return self.name
     def get_absolute_url(self):
-        return reverse('plugins:netbox_tunnels2:tunnel', args=[self.pk])
+        return reverse('plugins:fedele_tunnels2:tunnel', args=[self.pk])
     def get_status_color(self):
         return TunnelStatusChoices.colors.get(self.status)
 

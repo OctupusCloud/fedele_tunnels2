@@ -28,7 +28,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
         with:
-          path: netbox-tunnels2
+          path: fedele-tunnels2
 
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
@@ -42,8 +42,8 @@ jobs:
           path: netbox
           ref: develop
 
-      - name: install netbox_tunnels2
-        working-directory: netbox-tunnels2
+      - name: install fedele_tunnels2
+        working-directory: fedele-tunnels2
         run: |
           # include tests directory for test
           sed -i 's/exclude/#exclude/g' pyproject.toml
@@ -51,10 +51,10 @@ jobs:
       - name: Install dependencies & set up configuration
         working-directory: netbox
         run: |
-          ln -s $(pwd)/../netbox-tunnels2/docs/dev/configuration.testing.py netbox/netbox/configuration.py
+          ln -s $(pwd)/../fedele-tunnels2/docs/dev/configuration.testing.py netbox/netbox/configuration.py
           python -m pip install --upgrade pip
           pip install -r requirements.txt -U
       - name: Run tests
         working-directory: netbox
         run: |
-          python netbox/manage.py test netbox_tunnels2
+          python netbox/manage.py test fedele_tunnels2

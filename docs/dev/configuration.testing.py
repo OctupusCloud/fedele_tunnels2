@@ -15,7 +15,7 @@ DATABASE = {
 }
 
 PLUGINS = [
-    "netbox_tunnels2",
+    "fedele_tunnels2",
 ]
 
 REDIS = {

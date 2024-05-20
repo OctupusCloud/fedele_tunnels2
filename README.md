@@ -1,70 +1,72 @@
-# Netbox Tunnels Plugin
-This plugin is a fork of [jdrew82/netbox-tunnels-plugin](https://github.com/jdrew82/netbox-tunnels-plugin) and [hiddenman/netbox-tunnels-plugin](https://github.com/hiddenman/netbox-tunnels-plugin) in an effort to support Netbox 3.4+. 
+# Fedele Tunnels Plugin
+Este plugin es un fork de https://github.com/robertlynch3/netbox-tunnels2
 
-<!-- Build status with linky to the builds for ease of access.
-[![Build Status](https://travis-ci.com/jdrew82/netbox-tunnels-plugin.svg?token=XHesDxGFcPtaq1Q3URi5&branch=master)](https://travis-ci.com/jdrew82/netbox-tunnels-plugin)
- -->
-<!-- PyPI version badge.
-[![PyPI version](https://badge.fury.io/py/netbox-tunnels-plugin.svg)](https://badge.fury.io/py/netbox-tunnels-plugin)
+## Creación del Fork
+Para futuras actualizaciones del Plugin, si se desea realizar un nuevo fork, se debe realizar el siguiente procedimiento:
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-+NOTE: Please be aware that this plugin is still a work in progress and should not be used for production work at this time!+
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+1. Hacer el Fork
+2. Añadir remoto: 
+  
+  ```
+  git remote add upstream [GitHub repo original]
+  ```
 
-A plugin for [NetBox](https://github.com/netbox-community/netbox) to support documentation of network tunneling
- protocols, ie IPsec, GRE, L2TP, etc.
- -->
- ## Features
-This plugin provide following Models:
-* Tunnels
-* Tunnel Types
+3. Obtener tags: 
+  ```
+  git fetch upstream --tags
+  ```
 
-## Compatibility
+4. Ir a rama main:
+  ```
+  git checkout main
+  ```
 
-| NetBox Version | Plugin Version |
-|:--------------:|:--------------:|
-|   NetBox 3.4   |      0.2.2     |
-|   NetBox 3.5   |      0.2.3     |
-|   NetBox 3.6 >   |      0.2.8     |
+5. Reiniciar rama main con el tag a utilizar:
 
-This is currently a work in progress.
-## Installation
-You can install this package from Pip
+  ```
+  git reset --hard tags/nombre-del-tag  
+  ```
+
+6. Pushear cambios:
+  ```
+  git push --force origin main
+  ```
+
+## Instalación
+
+1. Cambiar netbox_tunnels2 por fedele_tunnels2 en ```__init__.py``` y en ```setup.py```
+
+2. Cambiar nombre de carpeta de proyecto a ```fedele_tunnels2```
+
+3. Cambiar nombre de carpeta ```/fedele_tunnels2/templates/netbox_tunnels2``` a ```/fedele_tunnels2/templates/fedele_tunnels2```
+
+4. Con ```Ctrl + Shift + H``` reemplazar ```netbox_tunnels2``` por ```fedele_tunnels2``` en TODOS lados
+
+5. Con ```Ctrl + Shift + H``` reemplazar ```netbox-tunnels2``` por ```fedele-tunnels2``` en TODOS lados
+
+6. Activar entorno virtual: 
 ```
-pip install netbox-tunnels2
-```
-
-To install the package from source
-```
-git clone https://github.com/robertlynch3/netbox-tunnels2.git
-cd netbox-tunnels2
-source /path/to/netbox/venv/bin/activate
-python3 setup.py develop
-```
-
-Enable the plugin in /opt/netbox/netbox/netbox/configuration.py:
-```
-PLUGINS = ['netbox_tunnels2']
-```
-
-Apply the migrations with Netbox `manage.py`:
-```
-(venv) $ python manage.py migrate
+source /opt/o4n/O4N_FEDELE_SOURCE/venv/bin/activate
 ```
 
-Restart Netbox to apply the changes:
-```
-sudo systemctl restart netbox
-```
-See [NetBox Documentation](https://docs.netbox.dev/en/stable/plugins/#installing-plugins) for details
+7. Instalar Extensión: 
+  ```
+  python setup.py develop
+  ```
 
-## Screenshots
-Tunnel List
-![Tunnel List](https://github.com/robertlynch3/netbox-tunnels2/blob/master/docs/img/tunnel-list.png)
+8. En ```configuration.py``` de Fedele agregar:
+  ```
+  PLUGINS = ["fedele_tunnels2"]
+  ```
 
-Tunnel Details
-![Tunnel Details](https://github.com/robertlynch3/netbox-tunnels2/blob/master/docs/img/tunnel-info.png)
+9. Eliminar todas las migraciones de la carpeta ```migrations```
 
-## TODO
-* Validate the Public IP addresses belong to the Devices
-* Validate the same inside interface is not used by multiple tunnels
+10. Detectar migraciones:
+  ```
+  python manage.py makemigrations
+  ```
+
+11. Ejecutar migraciones:
+  ```
+  python manage.py migrate
+  ```

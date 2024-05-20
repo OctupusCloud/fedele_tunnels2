@@ -6,10 +6,10 @@
 
 PLUGINS = [
     "netbox_initializers",  # Loads demo data
-    "netbox_tunnels2",
+    "fedele_tunnels2",
 ]
 
 PLUGINS_CONFIG = {  # type: ignore
     "netbox_initializers": {},
-    "netbox_tunnels2": {},
+    "fedele_tunnels2": {},
 }

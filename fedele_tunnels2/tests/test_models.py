@@ -3,7 +3,7 @@ from django.db import IntegrityError, transaction
 from django.test import TestCase
 from django.contrib.contenttypes.models import ContentType
 
-from netbox_tunnels2.models import Tunnel, TunnelType
+from fedele_tunnels2.models import Tunnel, TunnelType
 from dcim.models import Site, DeviceRole, DeviceType, Manufacturer, Device, Interface
 from ipam.models import IPAddress
 from virtualization.models import VirtualMachine, VMInterface

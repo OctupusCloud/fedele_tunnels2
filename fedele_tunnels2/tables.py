@@ -102,7 +102,7 @@ class TunnelTypeTable(NetBoxTable):
         linkify=True
     )
     tunnel_count=columns.LinkedCountColumn(
-        viewname='plugins:netbox_tunnels2:tunnel_list',
+        viewname='plugins:fedele_tunnels2:tunnel_list',
         url_params={'tunnel_type': 'pk'},
         verbose_name='Tunnels'
     )

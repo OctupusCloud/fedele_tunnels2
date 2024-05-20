@@ -5,7 +5,7 @@ requires = ["setuptools>=61.0.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "netbox-tunnels2"
+name = "fedele-tunnels2"
 version = "0.2.8"
 description = "Provides the ability track IP Tunnels."
 readme = "README.md"
@@ -13,7 +13,7 @@ authors = [{ name = "Robert Lynch", email = "robertlynch3@users.noreply.github.c
 license = { file = "LICENSE" }
 
 [project.urls]
-Homepage = "https://github.com/robertlynch3/netbox-tunnels2"
+Homepage = "https://github.com/robertlynch3/fedele-tunnels2"
 
 [project.optional-dependencies]
 dev = ["black", "bumpver", "isort", "pip-tools", "pytest"]
@@ -29,6 +29,6 @@ commit = false
     'current_version = "{version}"$',
     'version = "{version}"$',
 ]
-"netbox_tunnels2/version.py" = [
+"fedele_tunnels2/version.py" = [
     '__version__="{version}"$',
 ]
